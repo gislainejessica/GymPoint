@@ -5,11 +5,19 @@ Aplicativo que lida com  demandas de uma academia
 
 Construindo primeira parte do servidor em NodeJs
 
-- [Desafio 2]('./docs/Desafio2.md')
+- Server em NodeJs
+[Desafio 2]('./docs/Desafio2.md') 
+[Desafio 3]('./docs/Desafio2.md') 
+
+---
+- Web Page em React
+[Desafio 9]('./docs/Desafio2.md') 
 
 ---
 
-App Mobile React Native
-Server em NodeJs
-Web Page em React
+- App Mobile React Native
+[Desafio 10]('./docs/Desafio2.md') 
+
+---
+
 
