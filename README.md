@@ -8,7 +8,7 @@ Aplicativo que lida com  demandas de uma academia
 
 ## Round 2
 - Server
-[Desafio 3]('./docs/Desafio2.md')
+[Desafio 3]('./docs/Desafio3.md')
 
 
 ## Round 3
