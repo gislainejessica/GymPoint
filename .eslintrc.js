@@ -3,7 +3,7 @@ module.exports = {
 		'es6': true,
 		'node': true
 	},
-	'extends': ['eslint:recommended', 'prettier'],
+	'extends': ['prettier'],
 	'plugins':['prettier'],
 	'globals': {
 		'Atomics': 'readonly',
