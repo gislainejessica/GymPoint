@@ -83,7 +83,6 @@ class StudentController {
 
 		// Validação das mudanças
 		const student = await Student.findByPk(id)
-		console.log(student.email)
 
 		// Verificar se email passado é diferente(quer trocar)
 		if (email !== student.email) {
