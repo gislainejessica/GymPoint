@@ -79,7 +79,7 @@ class PlanController {
 		const user = await User.findByPk(id)
 		if (!user.admim) {
 			return res.status(401).json({
-				message: 'Usuario não é administrador, cadastro não pode ser realizado',
+				message: 'Usuario não é administrador, plano não pode ser deletado',
 			})
 		}
 		const plano = await Planos.destroy({ where: { id: plan_id } })

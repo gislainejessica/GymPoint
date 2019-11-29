@@ -105,6 +105,22 @@ class StudentController {
 
 		return res.json(newStudent)
 	}
+	async delete(req, res) {
+		const { id } = req.params
+		const admim_id = req.user_id
+
+		// Verificar se é um admnistrador que está logado
+		const user = await User.findByPk(admim_id)
+		if (!user.admim) {
+			return res.status(401).json({
+				message: 'Usuario não é administrador, remoção não pode ser realizado',
+			})
+		}
+
+		const student = await Student.destroy({ where: { id } })
+
+		return res.json(student)
+	}
 }
 
 export default new StudentController()

@@ -6,20 +6,30 @@ import PlanController from './app/controllers/PlanController'
 import auth from './app/middlewares/auth'
 
 const routes = Router()
-// Login
+
+/** Login */
+
 routes.post('/sessions', SessionController.store)
 
-// Cadastrar estudante
-routes.post('/students', auth, StudentController.store)
-// Listar estudantes
+/** Estudantes */
+
 routes.get('/students', StudentController.index)
-// Atualizar estudante
+routes.post('/students', auth, StudentController.store)
 routes.put('/students/:id', auth, StudentController.update)
 
-// Planos
+routes.delete('/students/:id', auth, StudentController.delete)
+
+/** Planos */
+
 routes.get('/planos', auth, PlanController.index)
 routes.post('/planos', auth, PlanController.store)
 routes.put('/planos/:id', auth, PlanController.update)
 routes.delete('/planos/:id', auth, PlanController.delete)
+
+/** Matriculas */
+routes.get('/matriculas', auth, PlanController.index)
+routes.post('/matriculas', auth, PlanController.store)
+routes.put('/matriculas/:id', auth, PlanController.update)
+routes.delete('/matriculas/:id', auth, PlanController.delete)
 
 export default routes
