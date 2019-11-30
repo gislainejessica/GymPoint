@@ -7,14 +7,17 @@ class Matricula extends Model {
 				start_date: Sequelize.DATE,
 				end_date: Sequelize.DATE,
 				price: Sequelize.NUMBER,
-				student_id: Sequelize.NUMBER,
-				plan_id: Sequelize.NUMBER,
 			},
 			{
 				sequelize,
 			}
 		)
 		return this
+	}
+
+	static associate(models) {
+		this.belongsTo(models.Student, { foreignKey: 'student_id', as: 'student' })
+		this.belongsTo(models.Planos, { foreignKey: 'plan_id', as: 'plano' })
 	}
 }
 

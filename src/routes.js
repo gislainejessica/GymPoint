@@ -2,6 +2,7 @@ import { Router } from 'express'
 import SessionController from './app/controllers/SessionController'
 import StudentController from './app/controllers/StudentController'
 import PlanController from './app/controllers/PlanController'
+import MatriculaController from './app/controllers/MatriculaController'
 
 import auth from './app/middlewares/auth'
 
@@ -27,9 +28,10 @@ routes.put('/planos/:id', auth, PlanController.update)
 routes.delete('/planos/:id', auth, PlanController.delete)
 
 /** Matriculas */
-routes.get('/matriculas', auth, PlanController.index)
-routes.post('/matriculas', auth, PlanController.store)
-routes.put('/matriculas/:id', auth, PlanController.update)
-routes.delete('/matriculas/:id', auth, PlanController.delete)
+
+routes.get('/matriculas', auth, MatriculaController.index)
+routes.post('/matriculas', auth, MatriculaController.store)
+routes.put('/matriculas/:student_id', auth, MatriculaController.update)
+routes.delete('/matriculas/:student_id', auth, MatriculaController.delete)
 
 export default routes

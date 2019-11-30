@@ -16,6 +16,7 @@ class Student extends Model {
 		)
 		return this
 	}
+	static associate(models) {}
 }
 
 export default Student

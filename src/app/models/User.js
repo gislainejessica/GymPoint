@@ -22,6 +22,7 @@ class User extends Model {
 		})
 		return this
 	}
+	static associate(models) {}
 
 	checkPassword(password) {
 		return bcrypt.compare(password, this.password_hash)

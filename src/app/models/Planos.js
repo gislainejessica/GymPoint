@@ -14,6 +14,7 @@ class Planos extends Model {
 		)
 		return this
 	}
+	static associate(models) {}
 }
 
 export default Planos
