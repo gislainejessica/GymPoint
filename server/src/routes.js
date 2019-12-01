@@ -4,6 +4,7 @@ import StudentController from './app/controllers/StudentController'
 import PlanController from './app/controllers/PlanController'
 import MatriculaController from './app/controllers/MatriculaController'
 import UserController from './app/controllers/UserController'
+import CheckinController from './app/controllers/CheckinController'
 
 import auth from './app/middlewares/auth'
 import admim from './app/middlewares/admin'
@@ -11,10 +12,10 @@ import admim from './app/middlewares/admin'
 const routes = Router()
 
 /** Usuarios */
-routes.get('/users', admim, UserController.index)
-routes.post('/users', admim, UserController.store)
-routes.put('/users', admim, UserController.update)
-routes.delete('/users', admim, UserController.delete)
+routes.get('/users', auth, UserController.index)
+routes.post('/users', auth, UserController.store)
+routes.put('/users', auth, UserController.update)
+routes.delete('/users', auth, UserController.delete)
 
 /** Login */
 
@@ -40,5 +41,9 @@ routes.get('/matriculas', auth, admim, MatriculaController.index)
 routes.post('/matriculas', auth, admim, MatriculaController.store)
 routes.put('/matriculas/:id', auth, admim, MatriculaController.update)
 routes.delete('/matriculas/:id', auth, admim, MatriculaController.delete)
+
+/** Chekin */
+routes.get('/students/:student_id/checkins', CheckinController.show)
+routes.post('/students/:student_id/checkins', CheckinController.store)
 
 export default routes

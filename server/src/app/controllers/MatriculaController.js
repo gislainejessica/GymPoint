@@ -14,7 +14,7 @@ class MatriculaController {
 			order: ['start_date'],
 			limit: 20,
 			offset: (page - 1) * 20,
-			attributes: ['id', 'start_date', 'end_date', 'price'],
+			attributes: ['id', 'start_date', 'end_date', 'price', 'active'],
 			include: [
 				{
 					model: Student,
