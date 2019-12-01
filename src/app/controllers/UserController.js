@@ -1,20 +1,19 @@
 import * as Yup from 'yup'
-import Student from '../models/Student'
+import bcrypt from 'bcryptjs'
 import User from '../models/User'
 
-class StudentController {
+class UserController {
 	async store(req, res) {
-		const { name, email, idade, peso, altura } = req.body
-
 		// Validação das entradas
 		const schema = await Yup.object().shape({
 			name: Yup.string().required(),
 			email: Yup.string()
 				.email()
 				.required(),
-			idade: Yup.number(),
-			peso: Yup.number(),
-			altura: Yup.number(),
+			password: Yup.number()
+				.required()
+				.min(6),
+			admim: Yup.boolean(),
 		})
 
 		if (!schema.isValid(req.body)) {
@@ -22,33 +21,30 @@ class StudentController {
 		}
 
 		// Verificar se usuario existe
-		const studentExists = await Student.findOne({
-			where: { email: req.body.email },
-		})
-		if (studentExists) {
+		const userExists = await User.findOne({ where: { email: req.body.email } })
+		if (userExists) {
 			return res.status(400).json({ error: 'email já está cadastrado' })
 		}
-
-		const newStudent = {
-			name,
-			email,
-			idade,
-			peso,
-			altura,
+		const password_hash = bcrypt.hashSync(req.body.password, 8)
+		const novo = {
+			name: req.body.name,
+			email: req.body.email,
+			password_hash,
+			adim: req.body.adim,
 		}
 
-		await Student.create(newStudent)
-		return res.json(newStudent)
+		await User.create(novo)
+		return res.json(novo)
 	}
 
 	async index(req, res) {
-		const students = await Student.findAll()
-		return res.json(students)
+		const users = await User.findAll()
+		return res.json(users)
 	}
 
 	async update(req, res) {
-		const { name, email, idade, peso, altura } = req.body
-		const { id } = req.params
+		const { name, email } = req.body
+		const { id: admim_id } = req.params
 
 		// Validação das entradas
 		const schema = await Yup.object().shape({
@@ -56,9 +52,7 @@ class StudentController {
 			email: Yup.string()
 				.email()
 				.required(),
-			idade: Yup.number(),
-			peso: Yup.number(),
-			altura: Yup.number(),
+			admim: Yup.boolean(),
 		})
 
 		if (!(await schema.isValid(req.body))) {
@@ -66,18 +60,18 @@ class StudentController {
 		}
 
 		// Validação das mudanças
-		const student = await Student.findByPk(id)
+		const { id } = await User.findByPk(admim_id)
 
 		// Verificar se email passado é diferente(quer trocar)
-		if (email !== student.email) {
+		if (email !== User.email) {
 			// verificar se email novo já não existe na base de dados
-			if (email === Student.findOne({ where: { email } })) {
+			if (email === User.findOne({ where: { email } })) {
 				return res.status(400).json({ error: 'email já está cadastrado' })
 			}
 		}
 
-		const newStudent = {
-			id: student.id,
+		const newUser = {
+			id,
 			name,
 			email,
 			idade,
@@ -85,18 +79,18 @@ class StudentController {
 			altura,
 		}
 
-		await Student.update(newStudent, { where: { id } })
+		await User.update(newUser, { where: { id } })
 
-		return res.json(newStudent)
+		return res.json(newUser)
 	}
 
 	async delete(req, res) {
 		const { id } = req.params
 
-		const student = await Student.destroy({ where: { id } })
+		const user = await User.destroy({ where: { id } })
 
-		return res.json(student)
+		return res.json(user)
 	}
 }
 
-export default new StudentController()
+export default new UserController()

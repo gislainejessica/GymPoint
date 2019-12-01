@@ -4,16 +4,6 @@ import User from '../models/User'
 
 class PlanController {
 	async store(req, res) {
-		const id = req.user_id
-
-		// Verificar se é um admnistrador que está logado
-		const user = await User.findByPk(id)
-		if (!user.admim) {
-			return res.status(401).json({
-				message: 'Usuario não é administrador, cadastro não pode ser realizado',
-			})
-		}
-
 		// Validação das entradas
 		const schema = await Yup.object().shape({
 			title: Yup.string().required(),
@@ -29,32 +19,15 @@ class PlanController {
 
 		return res.json(req.body)
 	}
+
 	async index(req, res) {
-		const id = req.user_id
-
-		// Verificar se é um admnistrador que está logado
-		const user = await User.findByPk(id)
-		if (!user.admim) {
-			return res.status(401).json({
-				message: 'Usuario não é administrador, cadastro não pode ser realizado',
-			})
-		}
-
 		const planos = await Planos.findAll()
 
 		return res.json(planos)
 	}
-	async update(req, res) {
-		const id = req.user_id
-		const plan_id = req.params.id
 
-		// Verificar se é um admnistrador que está logado
-		const user = await User.findByPk(id)
-		if (!user.admim) {
-			return res.status(401).json({
-				message: 'Usuario não é administrador, cadastro não pode ser realizado',
-			})
-		}
+	async update(req, res) {
+		const plan_id = req.params.id
 
 		// Validação das entradas
 		const schema = await Yup.object().shape({
@@ -71,17 +44,10 @@ class PlanController {
 
 		return res.json(req.body)
 	}
+
 	async delete(req, res) {
-		const id = req.user_id
 		const plan_id = req.params.id
 
-		// Verificar se é um admnistrador que está logado
-		const user = await User.findByPk(id)
-		if (!user.admim) {
-			return res.status(401).json({
-				message: 'Usuario não é administrador, plano não pode ser deletado',
-			})
-		}
 		const plano = await Planos.destroy({ where: { id: plan_id } })
 		return res.json(plano)
 	}
