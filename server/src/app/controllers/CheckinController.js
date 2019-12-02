@@ -9,7 +9,7 @@ class CheckinController {
 
 		const checkins = await Checkin.findAndCountAll({ where: { student_id } })
 
-		return res.json({ message: checkins.count })
+		return res.json({ message: checkins})
 	}
 
 	async store(req, res) {
