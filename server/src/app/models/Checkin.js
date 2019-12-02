@@ -12,7 +12,9 @@ class Checkin extends Model {
 		)
 		return this
 	}
-	static associate(models) {}
+	static associate(models) {
+		this.belongsTo(models.Student, { foreignKey: 'id', as: 'student' })
+	}
 }
 
 export default Checkin
