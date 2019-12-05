@@ -12,6 +12,7 @@ import admim from './app/middlewares/admin'
 const routes = Router()
 
 /** Usuarios */
+
 routes.get('/users', auth, UserController.index)
 routes.post('/users', auth, UserController.store)
 routes.put('/users', auth, UserController.update)
@@ -43,7 +44,19 @@ routes.put('/matriculas/:id', auth, admim, MatriculaController.update)
 routes.delete('/matriculas/:id', auth, admim, MatriculaController.delete)
 
 /** Chekin */
+
 routes.get('/students/:student_id/checkins', CheckinController.show)
 routes.post('/students/:student_id/checkins', CheckinController.store)
+
+/** helper-orders */
+
+routes.get('/helper-orders', auth, admim, HelperOrdersController.index)
+routes.post('/students/:student_id/help-orders', auth, admim, HelperOrdersController.store)
+routes.get('/students/:student_id/help-orders', auth, admim, HelperOrdersController.show)
+
+/** helper-answer */
+routes.post('/help-orders/:help_id/answer', auth, admim, HelperAnswerController.store)
+
+/** receber um e-mail da plataforma com a pergunta e resposta da academia */
 
 export default routes
