@@ -55,6 +55,7 @@ routes.post('/students/:student_id/help-orders', auth, admim, HelperOrdersContro
 routes.get('/students/:student_id/help-orders', auth, admim, HelperOrdersController.show)
 
 /** helper-answer */
+
 routes.post('/help-orders/:help_id/answer', auth, admim, HelperAnswerController.store)
 
 /** receber um e-mail da plataforma com a pergunta e resposta da academia */
