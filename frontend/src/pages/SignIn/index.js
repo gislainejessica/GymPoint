@@ -8,11 +8,10 @@ export default function SignIn() {
       <Banner> <img src={logo} alt="Login"/> </Banner>
       <Formulario>
           <label htmlFor=""> SEU EMAIL </label>
-          <input type="text"/>
+          <input type="text" placeholder="exemplo@email.com"/>
           
           <label htmlFor=""> SUA SENHA </label>
-          <input type="text"/>
-
+          <input type="text"  placeholder="********"/>
         <button type="button"> Entrar no Sistema </button>
       </Formulario>
     </Container>
