@@ -12,7 +12,7 @@ import Route from './Route'
 /** Paginas disponíveis para essa aplicação */
 
 import SignIn from '../pages/SignIn'
-import Register from '../pages/Register'
+import Student from '../pages/Student'
 import Auxilio from '../pages/Auxilio'
 import Plan from '../pages/Plan'
 import Matricula from '../pages/Matricula'
@@ -21,7 +21,7 @@ export default function Routes() {
   return(
     <Switch>
       <Route path="/" exact component={SignIn} />
-      <Route path="/alunos" component={Register} isPrivate/>
+      <Route path="/alunos" component={Student} isPrivate/>
 
       <Route path="/pedidos" component={Auxilio} isPrivate/>
       <Route path="/planos" component={Plan} isPrivate />

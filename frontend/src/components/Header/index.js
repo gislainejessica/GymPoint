@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/logoname.svg'
-import { Container, Content } from './styles';
+import { Container, Content, Profile } from './styles';
 
 
 export default function Header() {
@@ -13,12 +13,17 @@ export default function Header() {
 
       <nav>
         <ul>
-          <li> Alunos </li>
-          <li> Planos </li>
-          <li> Matriculas </li>
-          <li> Pedidos de Auxilios </li>
+          <li className="active"> ALUNOS </li>
+          <li> PLANOS </li>
+          <li> MATRICULAS </li>
+          <li> PEDIDOS DE AUXÍLIOS </li>
         </ul>
       </nav>
+
+      <Profile>
+        <span> Gislaine Jéssica </span>
+        <button> sair do sistema </button>
+      </Profile>
 
       
       </Content>
