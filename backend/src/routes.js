@@ -5,6 +5,10 @@ import PlanController from './app/controllers/PlanController'
 import MatriculaController from './app/controllers/MatriculaController'
 import UserController from './app/controllers/UserController'
 import CheckinController from './app/controllers/CheckinController'
+import HelperOrdersController from './app/controllers/HelperOrdersController'
+import HelperAnswerController from './app/controllers/HelperAnswerController'
+
+
 
 import auth from './app/middlewares/auth'
 import admim from './app/middlewares/admin'
