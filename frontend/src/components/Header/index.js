@@ -13,10 +13,10 @@ export default function Header() {
 
       <nav>
         <ul>
-          <li className="active"> ALUNOS </li>
-          <li> PLANOS </li>
-          <li> MATRICULAS </li>
-          <li> PEDIDOS DE AUXÍLIOS </li>
+          <li className="active"> <a> ALUNOS </a>  </li>
+          <li> <a> PLANOS </a>  </li>
+          <li> <a> MATRICULAS </a>  </li>
+          <li> <a> PEDIDOS DE AUXÍLIOS </a>  </li>
         </ul>
       </nav>
 

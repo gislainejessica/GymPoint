@@ -29,6 +29,7 @@ export const Content = styled.div`
       display: flex;
       flex-direction: row;
       color: #999;
+      font-weight: bold;
 
      li.active {
         color: #444;
