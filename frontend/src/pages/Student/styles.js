@@ -37,10 +37,43 @@ export const Title = styled.h2`
   color : #444;
 `;
 
-export const Box = styled.div`
+export const Box = styled.table`
     min-width:1200px;
     height:542px;
     background: #fff;
 
     margin-top: 20px;
+    padding: 30px;
+   
+  thead th {
+    color: #444;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  tbody tr {
+    height: 32px;
+  }
+
+  tbody td {
+    width: 100%;
+    color: #666;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+
+    button {
+      background: none;
+      font-size: 15px;
+      padding: 0 5px 0 5px;
+    }
+    button.editar {
+      color: #4D85EE;
+    }
+
+    button.apagar {
+      color: #DE3B3B;
+    }
+  }
 `;
