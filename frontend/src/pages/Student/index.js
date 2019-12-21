@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Title , PageInfo, Side} from './styles';
+import { Container, Title , PageInfo, Side, Box} from './styles';
 
 export default function Student() {
   return (
@@ -9,9 +9,13 @@ export default function Student() {
          <Title> Gerenciamento de Alunos </Title>
          <Side>
             <button> CADASTRAR </button>
-            <input type="text"/>
+            <input type="text" placeholder="Buscar alunos"/>
          </Side>
      </PageInfo>
+
+     <Box>
+
+     </Box>
    </Container>
   );
 }

@@ -14,10 +14,10 @@ export const Side = styled.div`
     color: #fff;
     font-size: 14px;
     border-radius: 4px;
+    margin-right:16px;
   }
 
   input {
-    margin-left: 16px;
     width:232px;
     height:36px;
     border:1 solid #ddd;
@@ -35,4 +35,12 @@ export const PageInfo = styled.div`
 
 export const Title = styled.h2`
   color : #444;
+`;
+
+export const Box = styled.div`
+    min-width:1200px;
+    height:542px;
+    background: #fff;
+
+    margin-top: 20px;
 `;
