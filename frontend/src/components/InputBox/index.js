@@ -1,17 +1,12 @@
 import React from 'react';
 
-import { Container, Title, Side } from './styles';
+import { Container, Label } from './styles';
 
-export default function InputBox({ title , button , input}) {
+export default function InputBox({ label , button , input}) {
   return (
     <Container>
-      <Title> {title} </Title>
-      { button && 
-        <Side>
-          <button> CADASTRAR </button>
-          {input &&  <input type="text" placeholder={input}/>}
-        </Side>
-      }
+      <Label> {label} </Label>
+      <input type="text" placeholder={input}/>
     </Container>
   );
 }

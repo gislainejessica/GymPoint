@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Info from '../../components/PageInfo'
 import { Container, Title , PageInfo, Side, Box} from './styles';
 
 export default function Student() {

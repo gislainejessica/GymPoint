@@ -1,14 +1,11 @@
 import React from 'react';
 import Tabela from '../../components/TableList';
 
-import Info from '../../components/PageInfo';
-import Input from '../../components/InputBox';
+import Input from '../../../components/InputBox';
 
+import { Container } from './styles';
 
-// import { Container } from './styles';
-
-
-export default function Matricula() {
+export default function CadastroMatricula() {
   const dados = {
     title: [ "Nome","Email", "Idade"],
     content: [
@@ -18,9 +15,8 @@ export default function Matricula() {
     ],
   }
   return (
-    <>
-      <Info title={"Gerenciamento de Matrículas"} button />
-      <Tabela data={dados} />
-    </>
+    <Container>
+      <Input />
+    </Container>
   );
 }

@@ -16,10 +16,13 @@ import Student from '../pages/Student'
 import Auxilio from '../pages/Auxilio'
 import Plan from '../pages/Plan'
 import Matricula from '../pages/Matricula'
+import Cadastro from '../pages/Student/CadastroAluno'
 
 export default function Routes() {
   return(
     <Switch>
+      <Route path="/cadastro" component={Cadastro} isPrivate/>
+
       <Route path="/" exact component={SignIn} />
       <Route path="/alunos" component={Student} isPrivate/>
 

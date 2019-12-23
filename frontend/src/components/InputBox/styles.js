@@ -7,30 +7,21 @@ export const Container = styled.div`
   
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
 
-  align-items: center;
-`;
-
-export const Title = styled.h2`
-  color : #444;
-`;
-
-export const Side = styled.div`
-  button {
-    background: #EE4D64;
-    width:142px;
-    height:36px;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 4px;
-    margin-right:16px;
-  }
+  align-items: flex-start;
 
   input {
     width:232px;
     height:36px;
-    border:1 solid #ddd;
+    border: 0.1 solid #ddd;
     padding-left: 5px;
   }
+`;
+
+export const Label = styled.h2`
+  font-size: 14px;
+  font-weight: bold;
+  color : #444;
+  margin-bottom: 6px;
 `;

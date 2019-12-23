@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from '../Button'
 import { Container, Title, Side } from './styles';
 
 export default function PageInfo({ title , button , input}) {
@@ -8,7 +8,7 @@ export default function PageInfo({ title , button , input}) {
       <Title> {title} </Title>
       { button && 
         <Side>
-          <button> CADASTRAR </button>
+          <Button label={"Lola"} />
           {input &&  <input type="text" placeholder={input}/>}
         </Side>
       }

@@ -16,7 +16,7 @@ export default function Plan() {
   }
   return (
     <>
-      <Info title={"Gerenciamento de Planos"} button/>
+      <Info title={"Gerenciamento de Planos"} button />
       <Tabela data={dados} />
     </>
   );
