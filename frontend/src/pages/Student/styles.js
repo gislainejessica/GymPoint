@@ -52,8 +52,8 @@ export const Box = styled.table`
     font-size: 16px;
   }
 
-  tbody tr {
-    height: 32px;
+  tbody  {
+    tr:hover {background-color: #f5f5f5;}
   }
 
   tbody td {

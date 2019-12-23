@@ -1,10 +1,10 @@
 import React from 'react'; 
-import { Router } from 'react-router-dom'
-import Global from  './styles/global'
-//import Background from './pages/_layouts/default'
-import Routes from './routes'
+import { Router } from 'react-router-dom';
 
-import history from './services/history'
+import Routes from './routes';
+import history from './services/history';
+
+import Global from  './styles/global';
 
 function App() {
   return (
