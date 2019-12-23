@@ -1,5 +1,8 @@
 import React from 'react';
-import Tabela from '../../components/TableList'
+import Tabela from '../../components/TableList';
+
+import Info from '../../components/PageInfo';
+
 // import { Container } from './styles';
 
 
@@ -13,6 +16,9 @@ export default function Matricula() {
     ],
   }
   return (
-    <Tabela data={dados} />
+    <>
+      <Info title={"Gerenciamento de Matrículas"} button />
+      <Tabela data={dados} />
+    </>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
-import Tabela from '../../components/TableList'
+import Tabela from '../../components/TableList';
+import Info from '../../components/PageInfo';
+import Box from '../../components/Box';
 
 // import { Container } from './styles';
 
@@ -13,6 +15,9 @@ export default function Auxilio() {
       ],
     }
   return (
-    <Tabela data={dados} />
+    <>
+      <Info title={"Pedidos de Auxílio"} />
+      <Tabela data={dados} button/>
+    </>
   );
 }
