@@ -2,14 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: #fff;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
 `;
 
 export const Content = styled.div`
   height: 64px;
-  max-width: 900px;
+  min-width: 900px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
   div {

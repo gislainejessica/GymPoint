@@ -10,6 +10,10 @@ export const Container = styled.div`
     font-size: 14px;
     border-radius: 4px;
     margin-right:16px;
+
+    :hover {
+      background: #fc7474;
+    }
   }
 `;
 
