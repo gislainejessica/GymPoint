@@ -31,8 +31,8 @@ export const Formulario = styled.form`
   }
 
   input {
-    width:300px;
-    height:45px;
+    width: 300px;
+    height: 45px;
     border-radius: 6px;
     padding-left: 15px;
 

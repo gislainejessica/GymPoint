@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from '../Button'
-import { Container, Title, Side } from './styles';
+import { Container, Side } from './styles';
 
 export default function PageInfo({ title , button , input}) {
   return (
     <Container>
-      <Title> {title} </Title>
+      <h2> {title} </h2>
       { button && 
         <Side>
-          <Button label={"Lola"} />
+          <Button label={"Cadastrar"} />
           {input &&  <input type="text" placeholder={input}/>}
         </Side>
       }

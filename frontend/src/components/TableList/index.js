@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Tabela } from './styles';
 
-export default function TableList({ data }) {
+export default function TableList({ data }, type) {
   return (
    <Container>
      <Tabela>

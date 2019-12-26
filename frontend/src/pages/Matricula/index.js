@@ -2,19 +2,15 @@ import React from 'react';
 import Tabela from '../../components/TableList';
 
 import Info from '../../components/PageInfo';
-import Input from '../../components/InputBox';
-
-
 // import { Container } from './styles';
-
 
 export default function Matricula() {
   const dados = {
-    title: [ "Nome","Email", "Idade"],
+    title: [ "ALUNO","PLANO", "INÍCIO", "TÉRMNINO", "ATIVA"],
     content: [
-      ["Maria", "maria@email.com", 22],
-      ["João", "joao@email.com", 25],
-      ["Cris", "cris@email.com", 42],
+      ["Maria Joanna","Start","30 de abril","30 de maio",  true],
+      ["João José", "Diamond","10 de junho","10 de novembro", true],
+      ["Cristine Mariana","Gold", "27 de janeiro","27 de outubro", false],
     ],
   }
   return (

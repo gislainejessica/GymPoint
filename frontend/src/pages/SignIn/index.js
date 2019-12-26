@@ -12,7 +12,7 @@ export default function SignIn() {
           
           <label htmlFor=""> SUA SENHA </label>
           <input type="text"  placeholder="********"/>
-        <button type="button"> Entrar no Sistema </button>
+          <button type="button"> Entrar no Sistema </button>
       </Formulario>
     </Container>
   );

@@ -12,11 +12,10 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.h2`
-  color : #444;
-`;
-
 export const Side = styled.div`
+  display: flex;
+  flex-direction: row;
+  
   button {
     background: #EE4D64;
     width:142px;

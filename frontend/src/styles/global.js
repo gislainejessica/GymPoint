@@ -22,6 +22,9 @@ export default createGlobalStyle`
   body, input, button {
     font: 14px, 'Roboto', sans-serif;
   }
+  h2 {
+    color : #444;
+  }
   a {
     text-decoration: none;
   }

@@ -1,6 +1,4 @@
 import React from 'react';
-import Tabela from '../../components/TableList';
-
 import Input from '../../../components/InputBox';
 
 import { Container } from './styles';

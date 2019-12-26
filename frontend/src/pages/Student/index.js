@@ -1,47 +1,24 @@
 import React from 'react';
-import Info from '../../components/PageInfo'
-import { Container, Title , PageInfo, Side, Box} from './styles';
+import Info from '../../components/PageInfo';
+import Tabela from '../../components/TableList';
+
+
+import { Container, Side, Box} from './styles';
 
 export default function Student() {
-  const dados = [
-    ["Maria", "maria@email.com", 22],
-    ["João", "joao@email.com", 25],
-    ["Cris", "cris@email.com", 42],
-  ]
+  const dados = {
+    title: [ "Nome","Email", "Idade"],
+    content: [
+      ["Joanna", "Joanna@email.com", 29],
+      ["Bruna", "Bruna@email.com",  19],
+      ["Carolina ", "Carolina@email.com",  89],
+    ],
+  }
   return (
-   <Container>
-     <PageInfo>
-         <Title> Gerenciamento de Alunos </Title>
-         <Side>
-            <button> CADASTRAR </button>
-            <input type="text" placeholder="Buscar alunos"/>
-         </Side>
-     </PageInfo>
+   <>
+      <Info title={"Gerenciamento de Alunos"} button input={"Buscar alunos"} />
+      <Tabela data={dados} />
 
-     <Box>
-        <thead>
-          <tr>
-            <th> NOME </th>
-            <th> EMAIL </th>
-            <th> IDADE </th>
-            <th/>
-            <th/>
-          </tr>
-        </thead>
-
-        <tbody>
-          {dados.map(aluno => ( 
-            <tr>
-              <td> {aluno[0]} </td>
-              <td> {aluno[1]} </td>
-              <td> {aluno[2]} </td>
-              <td> <button className="editar"> editar </button> </td>
-              <td> <button className="apagar"> apagar </button> </td>
-            </tr>)
-            )
-          }
-        </tbody>
-     </Box>
-   </Container>
+   </>
   );
 }
