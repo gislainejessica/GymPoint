@@ -1,22 +1,30 @@
 import React from 'react';
-import logo from '../../assets/logoname.svg'
-import { Container, Content, Profile } from './styles';
+import logo from '../../assets/logoname.svg';
+import { Container, Content, Profile, Linke } from './styles';
+import { Link } from 'react-router-dom';
 
 
-export default function Header() {
+export default function Header({history}) {
   return (
     <Container>
       <Content>
-        <div>
-            <img src={logo} alt="Gym"/>
-        </div>
-
+        
+        <Linke to = "/cadastro">  <img src={logo} alt="GYMPOINT"/> </Linke>
+       
         <nav>
           <ul>
-            <li className="active"> <a> ALUNOS </a>  </li>
-            <li> <a> PLANOS </a>  </li>
-            <li> <a> MATRICULAS </a>  </li>
-            <li> <a> PEDIDOS DE AUXÍLIOS </a>  </li>
+            <li className="active"> 
+              <Linke to = "/alunos"> ALUNOS </Linke> 
+            </li>
+            <li> 
+              <Linke to = "/planos"> PLANOS  </Linke> 
+            </li> 
+            <li> 
+              <Linke to = "/matriculas"> MATRICULAS </Linke> 
+            </li> 
+            <li> 
+              <Linke to = "/pedidos"> PEDIDOS DE AUXÍLIOS </Linke> 
+            </li> 
           </ul>
         </nav>
 

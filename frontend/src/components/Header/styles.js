@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   background: #fff;
@@ -6,6 +7,8 @@ export const Container = styled.div`
   padding-left: 30px;
   padding-right: 30px;
 `;
+
+
 
 export const Content = styled.div`
   height: 64px;
@@ -15,16 +18,6 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  div {
-    display: flex;
-    align-items: center;
-
-    img {
-      margin-right: 20px;
-      padding-right: 20px;
-      border-right: 1px solid #eee;
-    }
-  }
 
   nav {
     ul {
@@ -57,4 +50,22 @@ export const Profile = styled.div`
     background: none;
     border: 0;
   }
+`
+export const Linke = styled(Link)`
+    display: flex;
+    align-items: center;
+    color: #666;
+    text-decoration: none;
+    
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 0.7;
+    }
+
+
+    img {
+      margin-right: 20px;
+      padding-right: 20px;
+      border-right: 1px solid #eee;
+    }
 `
