@@ -9,7 +9,7 @@ export default function CadastroPlanp() {
   return (
     <>
     <InfoCadastro>
-      <h2> Cadastro de Matrícula </h2>
+      <h2> Cadastro de Plano </h2>
       <div className="Botaos">
         <Button label={"Voltar"}> </Button>
         <Button label={"Salvar"}> </Button>
@@ -17,13 +17,11 @@ export default function CadastroPlanp() {
     </InfoCadastro>
    
     <Container>
-      <Input label={"ALUNO"} />
+      <Input label={"TITULO DO PLANO"} />
       <div className="blockend">
-        <Input label={"PLANO"} />
-        <Input label={"DATA DE INÍCIO"} />
-        <Input label={"DATA TÉRMINO"} />
-        <Input label={"VALOR FINAL"} />
-
+        <Input label={"DURAÇÃO (Em meses)"} />
+        <Input label={"PREÇO MENSAL"} />
+        <Input label={"PREÇO TOTAL"} />
       </div>
     </Container>
   </>

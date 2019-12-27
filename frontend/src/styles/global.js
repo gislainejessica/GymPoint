@@ -24,6 +24,7 @@ export default createGlobalStyle`
   }
   h2 {
     color : #444;
+    font-weight: bold;
   }
   a {
     text-decoration: none;
