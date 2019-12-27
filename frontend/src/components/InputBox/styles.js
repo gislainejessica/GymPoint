@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-top: 30px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-bottom: 30px;
+  padding-right: 30px;
   
   display: flex;
   justify-content: space-between;
