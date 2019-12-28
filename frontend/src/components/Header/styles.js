@@ -18,7 +18,6 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
 
-
   nav {
     ul {
       display: flex;
@@ -26,9 +25,6 @@ export const Content = styled.div`
       color: #999;
       font-weight: bold;
 
-     li.active {
-        color: #444;
-     }
      li {
        margin: 10px;
      }
@@ -54,14 +50,14 @@ export const Profile = styled.div`
 export const Linke = styled(Link)`
     display: flex;
     align-items: center;
-    color: #666;
+    color: ${props => props.active ? '#444': '#999' };
     text-decoration: none;
     
     transition: opacity 0.2s;
-    &:hover {
-      opacity: 0.7;
-    }
 
+    &:hover {
+      opacity: ${props => props.active ? 1: 0.7 };
+    }
 
     img {
       margin-right: 20px;

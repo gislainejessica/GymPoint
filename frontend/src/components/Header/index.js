@@ -1,36 +1,47 @@
 import React from 'react';
 import logo from '../../assets/logoname.svg';
 import { Container, Content, Profile, Linke } from './styles';
+import { useRouteMatch, useLocation } from 'react-router-dom';
 
 export default function Header() {
+  const to = "/planos"
+
+  const location = useLocation()
+  console.log(location)
+  
+  let match = useRouteMatch({
+    path: location.pathname,
+    exact: true
+  });
+  console.log(match)
+
+
+  const active = false  ||  match ? "active" : ""
+
   return (
     <Container>
       <Content>
-        
         <Linke to = "/cadastro">  <img src={logo} alt="GYMPOINT"/> </Linke>
-       
         <nav>
           <ul>
-            <li className="active"> 
-              <Linke to = "/alunos"> ALUNOS </Linke> 
+            <li> 
+              <Linke to = "/alunos" active={ match.path === "/alunos" ? active : "" } > ALUNOS </Linke> 
             </li>
             <li> 
-              <Linke to = "/planos"> PLANOS  </Linke> 
+              <Linke to = "/planos" active={  match.path === "/planos" ? active : "" } > PLANOS  </Linke> 
             </li> 
             <li> 
-              <Linke to = "/matriculas"> MATRICULAS </Linke> 
+              <Linke to = "/matriculas" active={  match.path === "/matriculas" ? active : "" } > MATRICULAS </Linke> 
             </li> 
             <li> 
-              <Linke to = "/pedidos"> PEDIDOS DE AUXÍLIOS </Linke> 
+              <Linke to = "/pedidos" active= { match.path === "/pedidos" ? active : "" } > PEDIDOS DE AUXÍLIOS </Linke> 
             </li> 
           </ul>
         </nav>
-
         <Profile>
           <span> Gislaine Jéssica </span>
           <button> sair do sistema </button>
         </Profile>  
-        
       </Content>
     </Container>
   );
