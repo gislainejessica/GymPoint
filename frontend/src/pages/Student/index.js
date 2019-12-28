@@ -30,7 +30,6 @@ export default function Student() {
    <>
       <Info title={"Gerenciamento de Alunos"} button input={"Buscar alunos"} />
       <Tabela data={dados} />
-
    </>
   );
 }

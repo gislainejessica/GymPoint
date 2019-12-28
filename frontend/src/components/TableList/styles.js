@@ -4,14 +4,17 @@ export const Container = styled.div`
   padding-top: 30px;
   padding-left: 120px;
   padding-right: 120px;
-`
-
+`;
 
 export const Tabela = styled.table`
     height: fit-content;
     background: #fff;
     margin-top: 20px;
     padding: 30px;
+
+  tr {
+    height: 62px;
+  }  
    
   thead th {
     color: #444;
