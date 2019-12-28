@@ -6,7 +6,7 @@ import Info from '../../components/PageInfo';
 
 export default function Auxilio() {
     const dados = {
-      title: [ "Aluno"],
+      title: [ "ALUNO"],
       content: [
         [ "Maria", 22],
         [ "João",  25],

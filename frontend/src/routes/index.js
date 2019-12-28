@@ -17,7 +17,7 @@ import Auxilio from '../pages/Auxilio'
 import Plan from '../pages/Plan'
 import Matricula from '../pages/Matricula'
 //import Cadastro from '../pages/Student/CadastroAluno'
-import Cadastro from '../pages/Matricula/EdicaoMatricula'
+import Cadastro from '../pages/Student/EdicaoAluno'
 
 
 export default function Routes() {

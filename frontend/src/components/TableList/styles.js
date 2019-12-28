@@ -8,17 +8,15 @@ export const Container = styled.div`
 
 
 export const Tabela = styled.table`
-
-    min-width:1200px;
-    height:542px;
+    height: fit-content;
     background: #fff;
-
     margin-top: 20px;
     padding: 30px;
    
   thead th {
     color: #444;
     text-align: left;
+    text-transform: capitalize;
     font-weight: bold;
     font-size: 16px;
   }
@@ -29,6 +27,7 @@ export const Tabela = styled.table`
     text-align: left;
     border-bottom: 1px solid #eee;
     font-size: 16px;
+    margin-top: 16px;
 
     button {
       background: none;

@@ -6,7 +6,7 @@ import Info from '../../components/PageInfo';
 
 export default function Plan() {
   const dados = {
-    title: [ "Titulo","Duração", "Valor por Mês"],
+    title: [ "TÍTULO","DURAÇÃO", "VALOR Por MÊS"],
     content: [
       ["Start", "1 meses", 129],
       ["Gold", "3 meses",  109],

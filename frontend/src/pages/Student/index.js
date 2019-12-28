@@ -7,8 +7,20 @@ import { Container, Side, Box} from './styles';
 
 export default function Student() {
   const dados = {
-    title: [ "Nome","Email", "Idade"],
+    title: [ "NOME","EMAIL", "IDADE"],
     content: [
+      ["Joanna", "Joanna@email.com", 29],
+      ["Bruna", "Bruna@email.com",  19],
+      ["Carolina ", "Carolina@email.com",  89],
+      ["Joanna", "Joanna@email.com", 29],
+      ["Bruna", "Bruna@email.com",  19],
+      ["Carolina ", "Carolina@email.com",  89],
+      ["Joanna", "Joanna@email.com", 29],
+      ["Bruna", "Bruna@email.com",  19],
+      ["Carolina ", "Carolina@email.com",  89],
+      ["Joanna", "Joanna@email.com", 29],
+      ["Bruna", "Bruna@email.com",  19],
+      ["Carolina ", "Carolina@email.com",  89],
       ["Joanna", "Joanna@email.com", 29],
       ["Bruna", "Bruna@email.com",  19],
       ["Carolina ", "Carolina@email.com",  89],

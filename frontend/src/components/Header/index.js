@@ -1,10 +1,8 @@
 import React from 'react';
 import logo from '../../assets/logoname.svg';
 import { Container, Content, Profile, Linke } from './styles';
-import { Link } from 'react-router-dom';
 
-
-export default function Header({history}) {
+export default function Header() {
   return (
     <Container>
       <Content>
