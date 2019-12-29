@@ -2,16 +2,24 @@ import React from 'react';
 import logo from '../../assets/logoname.svg';
 import { Container, Content, Profile, Linke, LogOut } from './styles';
 import { useRouteMatch, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { signOut } from '../../store/modules/auth/actions';
 
 export default function Header() {
+  const dispatch = useDispatch()
+  const location = useLocation() 
 
-  const location = useLocation()  
   let match = useRouteMatch({
     path: location.pathname,
     exact: true
   });
 
   const active = false  ||  match ? "active" : ""
+  
+  function handleSignOut(){
+    dispatch(signOut())
+  }
 
   return (
     <Container>
@@ -35,7 +43,7 @@ export default function Header() {
         </nav>
         <Profile>
           <span> Gislaine Jéssica </span>
-          <LogOut to = "/" > sair do sistema </LogOut> 
+          <LogOut onClick={handleSignOut} > sair do sistema </LogOut> 
         </Profile>  
       </Content>
     </Container>

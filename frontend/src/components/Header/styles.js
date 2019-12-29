@@ -61,11 +61,12 @@ export const Linke = styled(Link)`
     }
 `;
 
-export const LogOut = styled(Link)`
+export const LogOut = styled.button`
   align-self: center;
   text-decoration: none;
   color: #EE4D64;
   font-size: 12px;
+  background: none;
 
   transition: opacity 0.2s;
 

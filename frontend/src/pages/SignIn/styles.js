@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Form, Input } from '@rocketseat/unform';
+
 
 export const Container = styled.div`
   display: flex;
@@ -17,7 +19,7 @@ export const Banner = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Formulario = styled.form`
+export const Formulario = styled(Form)`
   display: flex;
   justify-content: center;
   flex-direction: column;
