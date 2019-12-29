@@ -1,13 +1,28 @@
 import React from 'react';
 import Button from '../Button';
 import { Container, Side } from './styles';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
 export default function PageInfo({ title , button , input}) {
-  const history = useHistory();
+  const history = useHistory()
+  const location = useLocation()  
+
+  let match = useRouteMatch({
+    path: location.pathname,
+    exact: true
+  });
 
   const  handleClick = () => {
-    history.push("/alunos")
+    if (match.path === "/alunos"){
+        history.push("/cadastro/alunos")
+    }
+    if (match.path === "/matriculas"){
+      history.push("/cadastro/matriculas")
+    }
+    if (match.path === "/planos"){
+      history.push("/cadastro/planos")
+    }
+
   }
 
   return (

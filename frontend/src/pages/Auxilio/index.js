@@ -16,7 +16,7 @@ export default function Auxilio() {
   return (
     <>
       <Info title={"Pedidos de Auxílio"} />
-      <Tabela data={dados} button type={"1"}/>
+      <Tabela data={dados} type={"1"}/>
     </>
   );
 }

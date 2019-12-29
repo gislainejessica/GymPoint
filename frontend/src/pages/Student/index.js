@@ -3,7 +3,7 @@ import Info from '../../components/PageInfo';
 import Tabela from '../../components/TableList';
 
 
-import { Container, Side, Box} from './styles';
+//import { Container, Side, Box} from './styles';
 
 export default function Student() {
   const dados = {

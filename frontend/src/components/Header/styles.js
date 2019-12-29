@@ -41,11 +41,6 @@ export const Profile = styled.div`
     color: #666666
   }
 
-  button {
-    color: #EE4D64;
-    background: none;
-    border: 0;
-  }
 `
 export const Linke = styled(Link)`
     display: flex;
@@ -64,4 +59,17 @@ export const Linke = styled(Link)`
       padding-right: 20px;
       border-right: 1px solid #eee;
     }
-`
+`;
+
+export const LogOut = styled(Link)`
+  align-self: center;
+  text-decoration: none;
+  color: #EE4D64;
+  font-size: 12px;
+
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: ${props => props.active ? 1: 0.7 };
+  }
+`;

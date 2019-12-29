@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/logoname.svg';
-import { Container, Content, Profile, Linke } from './styles';
+import { Container, Content, Profile, Linke, LogOut } from './styles';
 import { useRouteMatch, useLocation } from 'react-router-dom';
 
 export default function Header() {
@@ -11,13 +11,12 @@ export default function Header() {
     exact: true
   });
 
-
   const active = false  ||  match ? "active" : ""
 
   return (
     <Container>
       <Content>
-        <Linke to = "/cadastro" active={match.path === "/cadastro" ? active : ""}>  <img src={logo} alt="GYMPOINT"/> </Linke>
+        <Linke to = "/alunos">  <img src={logo} alt="GYMPOINT"/> </Linke>
         <nav>
           <ul>
             <li> 
@@ -36,7 +35,7 @@ export default function Header() {
         </nav>
         <Profile>
           <span> Gislaine Jéssica </span>
-          <button> sair do sistema </button>
+          <LogOut to = "/" > sair do sistema </LogOut> 
         </Profile>  
       </Content>
     </Container>
