@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Tabela } from './styles';
 
-export default function TableList({ data }, type) {
+export default function TableList({ data, button, type } ) {
   return (
    <Container>
      <Tabela>
@@ -13,8 +13,14 @@ export default function TableList({ data }, type) {
             {data.content.map(body => (
               <tr>
                 {body.map(content => <td> {content} </td>)} 
-                <td> <button className="editar"> editar </button> </td> 
-                <td> <button className="apagar"> apagar </button> </td> 
+                {type === "1" ?
+                  <td> <button className="editar"> responder </button> </td>
+                :
+                <>
+                  <td> <button className="editar"> editar </button> </td>
+                  <td> <button className="apagar"> apagar </button> </td> 
+                </>
+                }    
               </tr> ))} 
           
         </tbody>

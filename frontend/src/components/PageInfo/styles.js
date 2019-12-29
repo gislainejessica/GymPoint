@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding-top: 30px;
   padding-left: 120px;
-  padding-right: 120px;
+  padding-right: 104px;
+  padding-bottom: 30px;
   
   display: flex;
   justify-content: space-between;
@@ -27,7 +28,7 @@ export const Side = styled.div`
   }
 
   input {
-    width:232px;
+    width:216px;
     height:36px;
     border:1 solid #ddd;
     padding-left: 5px;

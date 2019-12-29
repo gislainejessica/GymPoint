@@ -8,15 +8,15 @@ export default function Auxilio() {
     const dados = {
       title: [ "ALUNO"],
       content: [
-        [ "Maria", 22],
-        [ "João",  25],
-        [ "Cris",  42],
+        [ "Maria"],
+        [ "João"],
+        [ "Cris"],
       ],
     }
   return (
     <>
       <Info title={"Pedidos de Auxílio"} />
-      <Tabela data={dados} button/>
+      <Tabela data={dados} button type={"1"}/>
     </>
   );
 }

@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-top: 30px;
   padding-left: 120px;
   padding-right: 120px;
 `;
 
 export const Tabela = styled.table`
+    width: 100%;
     height: fit-content;
     background: #fff;
-    margin-top: 20px;
     padding: 30px;
 
   tr {
@@ -25,7 +24,6 @@ export const Tabela = styled.table`
   }
 
   tbody td {
-    width: 100%;
     color: #666;
     text-align: left;
     border-bottom: 1px solid #eee;
