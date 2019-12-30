@@ -10,6 +10,7 @@ export const Tabela = styled.table`
     height: fit-content;
     background: #fff;
     padding: 30px;
+    margin-bottom: 30px;
 
   tr {
     height: 62px;

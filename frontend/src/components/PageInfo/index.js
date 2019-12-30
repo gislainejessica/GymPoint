@@ -1,7 +1,8 @@
 import React from 'react';
+import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
+
 import Button from '../Button';
 import { Container, Side } from './styles';
-import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
 export default function PageInfo({ title , button , input}) {
   const history = useHistory()
@@ -22,7 +23,6 @@ export default function PageInfo({ title , button , input}) {
     if (match.path === "/planos"){
       history.push("/cadastro/planos")
     }
-
   }
 
   return (
@@ -37,4 +37,3 @@ export default function PageInfo({ title , button , input}) {
     </Container>
   );
 }
-/** <input type="text" placeholder="Buscar alunos"/> */

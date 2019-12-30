@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form, Input } from '@rocketseat/unform';
+import { Form } from '@rocketseat/unform';
 
 
 export const Container = styled.div`
@@ -23,13 +23,15 @@ export const Formulario = styled(Form)`
   display: flex;
   justify-content: center;
   flex-direction: column;
+
   margin-top: 30px;
 
   label {
     margin-top: 10px;
+    margin-bottom: 5px;
+
     font-weight: bold;
     font-size: 14px;
-    margin-bottom: 5px;
   }
 
   input {
@@ -45,12 +47,13 @@ export const Formulario = styled(Form)`
 
   button {
     margin-top: 20px;
-    background: #EE4D64;
     width:300px;
     height:45px;
     color: #fff;
     font-size: 16px;
     border-radius: 6px;
     border: 2 solid #F45; 
+    background: #EE4D64;
+
   }
 `;

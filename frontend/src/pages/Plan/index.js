@@ -2,11 +2,11 @@ import React from 'react';
 import Tabela from '../../components/TableList';
 import Info from '../../components/PageInfo';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 export default function Plan() {
   const dados = {
-    title: [ "TÍTULO","DURAÇÃO", "VALOR Por MÊS"],
+    title: [ "TÍTULO","DURAÇÃO", "VALOR MENSAL"],
     content: [
       ["Start", "1 meses", 129],
       ["Gold", "3 meses",  109],
@@ -14,9 +14,9 @@ export default function Plan() {
     ],
   }
   return (
-    <>
+    <Container>
       <Info title={"Gerenciamento de Planos"} button />
       <Tabela data={dados} />
-    </>
+    </Container>
   );
 }

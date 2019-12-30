@@ -14,11 +14,15 @@ export default createGlobalStyle`
     outline: 0;
   }
   html, body, #root {
-    height: 100%
+    height: 100%;
+  }
+  div {
+    overflow: auto;
   }
   body {
     -webkit-font-smoothing: antialiased;
   }
+
   body, input, button {
     font: 14px, 'Roboto', sans-serif;
   }
@@ -36,4 +40,4 @@ export default createGlobalStyle`
     cursor: pointer;
     border: 0;
   }
-`
+`;

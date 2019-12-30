@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from '../../assets/logoname.svg';
-import { Container, Content, Profile, Linke, LogOut } from './styles';
 import { useRouteMatch, useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { signOut } from '../../store/modules/auth/actions';
+
+import logo from '../../assets/logoname.svg';
+import { Container, Content, Profile, Linke, LogOut } from './styles';
+
 
 export default function Header() {
   const dispatch = useDispatch()
@@ -43,8 +45,10 @@ export default function Header() {
         </nav>
         <Profile>
           <span> Gislaine Jéssica </span>
-          <LogOut onClick={handleSignOut} > sair do sistema </LogOut> 
-        </Profile>  
+          <LogOut onClick={handleSignOut}> 
+            Sair do sistema 
+          </LogOut> 
+        </Profile> 
       </Content>
     </Container>
   );

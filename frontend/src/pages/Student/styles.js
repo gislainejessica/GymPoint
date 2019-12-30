@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    padding-top: 30px;
-    padding-left: 120px;
-    padding-right: 120px;
+   height: fit-content;
 `;
 
 export const Side = styled.div`

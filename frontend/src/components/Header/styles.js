@@ -8,8 +8,6 @@ export const Container = styled.div`
   padding-right: 30px;
 `;
 
-
-
 export const Content = styled.div`
   height: 64px;
   min-width: 900px;
@@ -40,8 +38,8 @@ export const Profile = styled.div`
     font-weight: bold;
     color: #666666
   }
+`;
 
-`
 export const Linke = styled(Link)`
     display: flex;
     align-items: center;

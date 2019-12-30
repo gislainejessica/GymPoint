@@ -10,4 +10,3 @@ export default function InputBox({ label , button , input}) {
     </Container>
   );
 }
-/** <input type="text" placeholder="Buscar alunos"/> */
