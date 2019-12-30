@@ -36,7 +36,8 @@ export const Profile = styled.div`
 
   span {
     font-weight: bold;
-    color: #666666
+    color: #666666;
+    margin-bottom: 2px;
   }
 `;
 

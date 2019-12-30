@@ -1,22 +1,38 @@
-import React from 'react';
+import React ,{ useEffect, useState, useMemo}from 'react';
 import Tabela from '../../components/TableList';
+import api from '../../services/api'
 
 import Info from '../../components/PageInfo';
 // import { Container } from './styles';
 
 export default function Matricula() {
-  const dados = {
-    title: [ "ALUNO","PLANO", "INÍCIO", "TÉRMNINO", "ATIVA"],
-    content: [
-      ["Maria Joanna","Start","30 de abril","30 de maio",  true],
-      ["João José", "Diamond","10 de junho","10 de novembro", true],
-      ["Cristine Mariana","Gold", "27 de janeiro","27 de outubro", false],
-    ],
-  }
+
+  const  title = ["ALUNO","PLANO", "INÍCIO", "TÉRMNINO", "ATIVA"]
+  const [students, setStudents] = useState([])
+
+  const dados = useMemo(() => {
+    const lista = []
+    students.map(student => {
+      const lstStudent = [student.student.name, student.plano.title, student.start_date, student.end_date, student.active]
+      lista.push(lstStudent)
+      console.log("Matricula dados")
+      console.tron.log("matriculas",student)
+    }) 
+    return lista
+  },[students])
+
+  useEffect(() => {
+    async function loadMatriculas(){
+      const response = await api.get('matriculas')
+      setStudents(response.data)
+    }
+    loadMatriculas()
+   }, [])
+
   return (
     <>
       <Info title={"Gerenciamento de Matrículas"} button />
-      <Tabela data={dados} />
+      <Tabela title={title} data={dados} />
     </>
   );
 }

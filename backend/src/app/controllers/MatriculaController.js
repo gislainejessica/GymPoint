@@ -5,6 +5,7 @@ import Matricula from '../models/Matricula'
 import Student from '../models/Student'
 import Planos from '../models/Planos'
 import User from '../models/User'
+// 			offset: (page - 1) * 20,			limit: 20,
 
 class MatriculaController {
 	async index(req, res) {
@@ -12,8 +13,6 @@ class MatriculaController {
 
 		const matriculas = await Matricula.findAll({
 			order: ['start_date'],
-			limit: 20,
-			offset: (page - 1) * 20,
 			attributes: ['id', 'start_date', 'end_date', 'price', 'active'],
 			include: [
 				{
@@ -32,13 +31,15 @@ class MatriculaController {
 		return res.json(matriculas)
 	}
 	async store(req, res) {
-		const { start_date, plan_id, student_id } = req.body
+		const { start_date, plan_id, student_id, active } = req.body
+		console.log(active)
 
 		// Validação das entradas
 		const schema = await Yup.object().shape({
 			student_id: Yup.number().required(),
 			plan_id: Yup.number().required(),
 			start_date: Yup.date().required(),
+			active: Yup.boolean().required(),
 		})
 
 		if (!(await schema.isValid(req.body))) {
@@ -54,11 +55,12 @@ class MatriculaController {
 			price: duration * price_plan,
 			plan_id,
 			student_id,
+			active
 		}
 
 		await Matricula.create(newMatricula)
 
-		res.json(newMatricula)
+		return res.json(newMatricula)
 	}
 
 	async update(req, res) {}

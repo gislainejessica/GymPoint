@@ -21,7 +21,10 @@ module.exports = {
 				type: Sequelize.FLOAT,
 				allowNull: false,
 			},
-
+			active: {
+				type: Sequelize.BOOLEAN,
+				allowNull: false,
+			},
 			student_id: {
 				type: Sequelize.INTEGER,
 				references: { model: 'students', key: 'id' },
@@ -52,3 +55,4 @@ module.exports = {
 		return queryInterface.dropTable('matriculas')
 	},
 }
+

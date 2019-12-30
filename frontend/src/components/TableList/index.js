@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Container, Tabela } from './styles';
 
-export default function TableList({ data, type } ) {
+export default function TableList({ title, data, type } ) {
   return (
    <Container>
      <Tabela>
         <thead>
-            <tr> {data.title.map(head => (<th> {head} </th>))} </tr>
+            <tr> {title.map(head => (<th> {head} </th>))} </tr>
         </thead>
         <tbody>
-            {data.content.map(body => (
+            {data.map(body => (
               <tr>
                 { body.map(content => <td> {content} </td>) } 
                 { type === "1" 

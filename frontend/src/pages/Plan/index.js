@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState, useMemo }  from 'react';
 import Tabela from '../../components/TableList';
 import Info from '../../components/PageInfo';
+import api from '../../services/api'
 
 import { Container } from './styles';
 
 export default function Plan() {
-  const dados = {
-    title: [ "TÍTULO","DURAÇÃO", "VALOR MENSAL"],
-    content: [
-      ["Start", "1 meses", 129],
-      ["Gold", "3 meses",  109],
-      ["Diamond ", "6 meses",  89],
-    ],
-  }
+
+  const  title = ["TÍTULO","DURAÇÃO", "VALOR MENSAL"]
+  const [students, setStudents] = useState([])
+
+  const dados = useMemo(() => {
+    const lista = []
+    students.map(student => {
+      const lstStudent = [student.title, student.duration, student.price]
+      lista.push(lstStudent)
+    }) 
+    return lista
+  },[students])
+
+  useEffect(() => {
+    async function loadPlanos(){
+      const response = await api.get('planos')
+      setStudents(response.data)
+    }
+    loadPlanos()
+   }, [])
+ 
   return (
     <Container>
       <Info title={"Gerenciamento de Planos"} button />
-      <Tabela data={dados} />
+      <Tabela title={title} data={dados} />
     </Container>
   );
 }

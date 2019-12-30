@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouteMatch, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux'
 import { signOut } from '../../store/modules/auth/actions';
 
 import logo from '../../assets/logoname.svg';
@@ -11,6 +11,7 @@ import { Container, Content, Profile, Linke, LogOut } from './styles';
 export default function Header() {
   const dispatch = useDispatch()
   const location = useLocation() 
+  const nome = useSelector(state => state.user.profile.name)
 
   let match = useRouteMatch({
     path: location.pathname,
@@ -44,7 +45,7 @@ export default function Header() {
           </ul>
         </nav>
         <Profile>
-          <span> Gislaine Jéssica </span>
+          <span> {nome} </span>
           <LogOut onClick={handleSignOut}> 
             Sair do sistema 
           </LogOut> 

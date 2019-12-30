@@ -1,5 +1,5 @@
 import Sequelize, { Model } from 'sequelize'
-
+import { isBefore, isAfter } from 'date-fns'
 class Matricula extends Model {
 	static init(sequelize) {
 		super.init(
@@ -8,16 +8,9 @@ class Matricula extends Model {
 				end_date: Sequelize.DATE,
 				price: Sequelize.NUMBER,
 				active: {
-					type: Sequelize.VIRTUAL(Sequelize.BOOLEAN, [
-						'start_date',
-						'end_date',
-					]),
-					get() {
-						return (
-							isBefore(this.get('start_date'), new Date()) &&
-							isAfter(this.get('end_date'), new Date())
-						)
-					},
+					type: Sequelize.BOOLEAN,
+					allowNull: false,
+					defaultValue: true,
 				},
 			},
 			{
@@ -34,3 +27,17 @@ class Matricula extends Model {
 }
 
 export default Matricula
+
+
+/**
+ * 	type: Sequelize.VIRTUAL(Sequelize.BOOLEAN, [
+						'start_date',
+						'end_date',
+					]),
+					get() {
+						return (
+							isBefore(this.get('start_date'), new Date()) &&
+							isAfter(this.get('end_date'), new Date())
+						)
+					},
+ */
