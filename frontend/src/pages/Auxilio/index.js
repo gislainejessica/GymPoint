@@ -1,22 +1,35 @@
-import React from 'react';
+import React ,{ useEffect, useState, useMemo}from 'react';
 import Tabela from '../../components/TableList';
+import api from '../../services/api';
 import Info from '../../components/PageInfo';
 
 // import { Container } from './styles';
 
 export default function Auxilio() {
-    const dados = {
-      title: [ "ALUNO"],
-      content: [
-        [ "Maria"],
-        [ "João"],
-        [ "Cris"],
-      ],
-    }
+    const title = [ "ALUNO"]
+    const [students, setStudents] = useState([])
+
+    const dados = useMemo(() => {
+      const lista = []
+      students.map(student => {
+        const lstStudent = [student.name]
+        lista.push(lstStudent)
+      }) 
+      return lista
+    },[students])
+  
+    useEffect(() => {
+      async function loadMatriculas(){
+        const response = await api.get('helper-orders')
+        setStudents(response.data)
+      }
+      loadMatriculas()
+     }, [])
+  
   return (
     <>
       <Info title={"Pedidos de Auxílio"} />
-      <Tabela data={dados} type={"1"}/>
+      <Tabela title={title} data={dados} type={"1"}/>
     </>
   );
 }

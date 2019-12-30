@@ -15,8 +15,6 @@ export default function Matricula() {
     students.map(student => {
       const lstStudent = [student.student.name, student.plano.title, student.start_date, student.end_date, student.active]
       lista.push(lstStudent)
-      console.log("Matricula dados")
-      console.tron.log("matriculas",student)
     }) 
     return lista
   },[students])

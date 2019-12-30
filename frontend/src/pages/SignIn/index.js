@@ -26,7 +26,9 @@ export default function SignIn() {
 
   return (
     <Container>
-      <Banner> <img src={logo} alt="Login"/> </Banner>
+      <Banner> 
+        <img src={logo} alt="Login"/> 
+      </Banner>
 
       <Formulario schema={schema} onSubmit={handleSubmit}>
           <label htmlFor=""> SEU EMAIL </label>

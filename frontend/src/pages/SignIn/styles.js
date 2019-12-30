@@ -14,8 +14,10 @@ export const Container = styled.div`
 `;
 
 export const Banner = styled.div`
-  height: 100px;
-  width: 153px;
+  img {
+    height: 100px;
+    width: 153px;
+  }
   margin-bottom: 10px;
 `;
 
