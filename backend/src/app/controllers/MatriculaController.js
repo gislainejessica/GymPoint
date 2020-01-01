@@ -6,7 +6,6 @@ import Student from '../models/Student'
 import Planos from '../models/Planos'
 import User from '../models/User'
 // 			offset: (page - 1) * 20,			limit: 20,
-
 class MatriculaController {
 	async index(req, res) {
 		const { page } = req.query
@@ -32,7 +31,6 @@ class MatriculaController {
 	}
 	async store(req, res) {
 		const { start_date, plan_id, student_id, active } = req.body
-		console.log(active)
 
 		// Validação das entradas
 		const schema = await Yup.object().shape({
@@ -63,7 +61,9 @@ class MatriculaController {
 		return res.json(newMatricula)
 	}
 
-	async update(req, res) {}
+	async update(req, res) {
+		return res.json({oi: "update"})
+	}
 
 	async delete(req, res) {
 		const { id } = req.params

@@ -1,6 +1,6 @@
 import * as Yup from 'yup'
 import Planos from '../models/Planos'
-import User from '../models/User'
+// import User from '../models/User'
 
 class PlanController {
 	async store(req, res) {
@@ -19,13 +19,11 @@ class PlanController {
 
 		return res.json(req.body)
 	}
-
 	async index(req, res) {
 		const planos = await Planos.findAll()
 
 		return res.json(planos)
 	}
-
 	async update(req, res) {
 		const plan_id = req.params.id
 
@@ -44,7 +42,6 @@ class PlanController {
 
 		return res.json(req.body)
 	}
-
 	async delete(req, res) {
 		const plan_id = req.params.id
 

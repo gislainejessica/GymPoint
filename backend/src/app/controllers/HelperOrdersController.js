@@ -1,12 +1,21 @@
-import Helper from '../models/Helper'
+import Helper from '../models/Helper';
+import Student from '../models/Student';
+
+// {order: ['id']}
 class HelperOrdersController {
 	async index(req, res) {
 
-		const pedidos = await Helper.findAll({order: ['id']})
+		const pedidos = await Helper.findAll({
+			order: ['id'],
+			include:[{
+				model: Student,
+				as: "student",
+				attributes: ["name"]
+			}]
+		})
 
-		return res.json({ message: pedidos })
+		return res.json(pedidos)
 	}
-
 	async show(req, res) {
 
 		return res.json({oi: 'show'})

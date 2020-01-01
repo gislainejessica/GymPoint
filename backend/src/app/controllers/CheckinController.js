@@ -11,7 +11,6 @@ class CheckinController {
 
 		return res.json({ message: checkins})
 	}
-
 	async store(req, res) {
 		const { student_id } = req.params
 

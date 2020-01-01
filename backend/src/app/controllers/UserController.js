@@ -36,12 +36,10 @@ class UserController {
 		await User.create(novo)
 		return res.json(novo)
 	}
-
 	async index(req, res) {
 		const users = await User.findAll()
 		return res.json(users)
 	}
-
 	async update(req, res) {
 		const { name, email } = req.body
 		const { id: admim_id } = req.params
@@ -83,7 +81,6 @@ class UserController {
 
 		return res.json(newUser)
 	}
-
 	async delete(req, res) {
 		const { id } = req.params
 

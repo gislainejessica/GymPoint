@@ -40,12 +40,10 @@ class StudentController {
 		await Student.create(newStudent)
 		return res.json(newStudent)
 	}
-
 	async index(req, res) {
 		const students = await Student.findAll()
 		return res.json(students)
 	}
-
 	async update(req, res) {
 		const { name, email, idade, peso, altura } = req.body
 		const { id } = req.params
@@ -89,7 +87,6 @@ class StudentController {
 
 		return res.json(newStudent)
 	}
-
 	async delete(req, res) {
 		const { id } = req.params
 
