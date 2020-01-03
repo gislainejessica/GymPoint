@@ -44,8 +44,8 @@ export default function CadastroAluno() {
     <InfoCadastro>
       <h2> Cadastro de Aluno </h2>
       <div className="Botaos">
-        <Button label={"Voltar"} action={back}> </Button>
-        <Button label={"Salvar"} action={salvar}> </Button>
+        <Button label={"Voltar"} action={back} type=""> </Button>
+        <Button label={"Salvar"} action={salvar} type="primary"> </Button>
       </div>
 
     </InfoCadastro>

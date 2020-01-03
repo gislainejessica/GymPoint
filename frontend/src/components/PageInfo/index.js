@@ -30,7 +30,7 @@ export default function PageInfo({ title , button , input}) {
       <h2> {title} </h2>
       { button && 
         <Side>
-          <Button label={"CADASTRAR"}  action={handleClick}/>
+          <Button label={"CADASTRAR"}  action={handleClick} type={"primary"}/>
           {input &&  <input type="text" placeholder={input}/>}
         </Side>
       }

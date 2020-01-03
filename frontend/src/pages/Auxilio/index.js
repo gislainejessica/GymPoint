@@ -12,7 +12,7 @@ export default function Auxilio() {
     const dados = useMemo(() => {
       const lista = []
       students.map(student => {
-        const lstStudent = [student.name]
+        const lstStudent = [student.student.name]
         lista.push(lstStudent)
       }) 
       return lista
@@ -21,6 +21,7 @@ export default function Auxilio() {
     useEffect(() => {
       async function loadMatriculas(){
         const response = await api.get('helper-orders')
+        console.log(response.data)
         setStudents(response.data)
       }
       loadMatriculas()

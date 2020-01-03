@@ -3,6 +3,21 @@ import React from 'react';
 import { Container, Tabela } from './styles';
 
 export default function TableList({ title, data, type } ) {
+ /**
+  *  const location = useLocation() 
+
+  let match = useRouteMatch({
+    path: location.pathname,
+    exact: true
+  });
+
+  const active = false  ||  match ? "active" : ""
+  
+  function handleEdicao(){
+    // Verificar a rota para saber a rota que sera direcionada
+
+  }
+  */
   return (
    <Container>
      <Tabela>

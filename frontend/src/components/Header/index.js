@@ -27,7 +27,9 @@ export default function Header() {
   return (
     <Container>
       <Content>
-        <Linke to = "/alunos">  <img src={logo} alt="GYMPOINT"/> </Linke>
+        <Linke to = "/alunos"> 
+         <img src={logo} alt="GYMPOINT"/> 
+        </Linke>
         <nav>
           <ul>
             <li> 

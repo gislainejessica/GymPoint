@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Label } from './styles';
 
-export default function InputBox({ label , button , input}) {
+export default function InputBox({ label, input}) {
   return (
     <Container>
       <Label> {label} </Label>

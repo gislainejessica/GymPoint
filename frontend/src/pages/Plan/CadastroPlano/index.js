@@ -46,7 +46,7 @@ export default function CadastroPlanp() {
       <h2> Cadastro de Plano </h2>
       <div className="Botaos">
         <Button label={"Voltar"}action={back}> </Button>
-        <Button label={"Salvar"}action={salvar}> </Button>
+        <Button label={"Salvar"}action={salvar} type="primary"> </Button>
       </div>
     </InfoCadastro>
    

@@ -13,7 +13,8 @@ export default function Plan() {
   const dados = useMemo(() => {
     const lista = []
     students.map(student => {
-      const lstStudent = [student.title, student.duration, student.price]
+      const mensal = student.duration === 1 ? `${student.duration} mês` : `${student.duration} meses`
+      const lstStudent = [student.title, mensal, `R$ ${student.price}`]
       lista.push(lstStudent)
     }) 
     return lista

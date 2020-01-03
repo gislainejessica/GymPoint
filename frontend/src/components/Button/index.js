@@ -1,12 +1,11 @@
 import React from 'react';
-import { Container } from './styles';
+import { StyledButton } from './styles';
 
-export default function Button({label, action}) {
+export default function Button({label, action, type, Icon,...rest}) {
   return (
-    <Container>
-      <button onClick={action}> 
-        { label || "CADASTRAR" } 
-      </button>
-    </Container>
+    <StyledButton type={type} onClick={action} {...rest}>
+      {Icon && <Icon size={24} color="#fff" />} 
+      <span> {label || 'Button'} </span>
+    </StyledButton>
   );
 }
