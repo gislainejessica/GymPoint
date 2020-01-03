@@ -9,14 +9,15 @@ export const Container = styled.div`
   flex-direction: column;
 
   align-items: flex-start;
-
-  input {
-    width:232px;
-    height:36px;
-    border: 0.1 solid #ddd;
-    padding-left: 5px;
-  }
 `;
+
+export const Entrada = styled.input`
+  width: 232px;
+  height: 36px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+`
 
 export const Label = styled.h2`
   font-size: 14px;

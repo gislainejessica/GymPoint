@@ -17,20 +17,11 @@ export const Side = styled.div`
   display: flex;
   flex-direction: row;
   
-  button {
-    background: #EE4D64;
-    width:142px;
-    height:36px;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 4px;
-    margin-right:16px;
-  }
-
   input {
-    width:216px;
-    height:36px;
-    border:1 solid #ddd;
-    padding-left: 5px;
+    width: 216px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding-left: 10px;
   }
 `;

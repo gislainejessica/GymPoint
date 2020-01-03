@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export const Container = styled.div`
   background: #fff;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding-right: 30px;
 `;
 
-export const Content = styled.div`
+export const NavBar = styled.div`
   height: 64px;
   min-width: 900px;
   margin: 0 auto;
@@ -17,16 +17,10 @@ export const Content = styled.div`
   align-items: center;
 
   nav {
-    ul {
       display: flex;
       flex-direction: row;
       color: #999;
       font-weight: bold;
-
-     li {
-       margin: 10px;
-     }
-    }
   }
 `;
 
@@ -41,7 +35,8 @@ export const Profile = styled.div`
   }
 `;
 
-export const Linke = styled(Link)`
+export const NavLinke = styled(NavLink)`
+    margin: 10px;
     display: flex;
     align-items: center;
     color: ${props => props.active ? '#444': '#999' };

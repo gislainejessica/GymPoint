@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRouteMatch, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
+
 import { signOut } from '../../store/modules/auth/actions';
 
 import logo from '../../assets/logoname.svg';
-import { Container, Content, Profile, Linke, LogOut } from './styles';
+import { Container, NavBar, Profile, NavLinke, LogOut } from './styles';
 
 
 export default function Header() {
@@ -26,25 +26,23 @@ export default function Header() {
 
   return (
     <Container>
-      <Content>
-        <Linke to = "/alunos"> 
-         <img src={logo} alt="GYMPOINT"/> 
-        </Linke>
+      <NavBar>
+        <NavLinke to = "/alunos"> 
+          <img src={logo} alt="GYMPOINT"/> 
+        </NavLinke>
         <nav>
-          <ul>
-            <li> 
-              <Linke to = "/alunos" active={match.path === "/alunos" ? active : ""} > ALUNOS </Linke> 
-            </li>
-            <li> 
-              <Linke to = "/planos" active={match.path === "/planos" ? active : ""} > PLANOS  </Linke> 
-            </li> 
-            <li> 
-              <Linke to = "/matriculas" active={match.path === "/matriculas" ? active : ""} > MATRICULAS </Linke> 
-            </li> 
-            <li> 
-              <Linke to = "/pedidos" active= {match.path === "/pedidos" ? active : ""} > PEDIDOS DE AUXÍLIOS </Linke> 
-            </li> 
-          </ul>
+          <NavLinke to = "/alunos" active={match.path.includes("/alunos")  ? active : ""} >
+            ALUNOS 
+          </NavLinke> 
+          <NavLinke to = "/planos" active={match.path.includes("/planos")  ? active : ""} > 
+            PLANOS  
+          </NavLinke> 
+          <NavLinke to = "/matriculas" active={match.path.includes("/matriculas") ? active : ""} > 
+            MATRICULAS 
+          </NavLinke> 
+          <NavLinke to = "/pedidos" active= {match.path.includes("/pedidos") ? active : ""} > 
+            PEDIDOS DE AUXÍLIOS 
+          </NavLinke> 
         </nav>
         <Profile>
           <span> {nome} </span>
@@ -52,7 +50,7 @@ export default function Header() {
             Sair do sistema 
           </LogOut> 
         </Profile> 
-      </Content>
+      </NavBar>
     </Container>
   );
 }
