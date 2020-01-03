@@ -1,23 +1,28 @@
 import React from 'react';
-
+import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Tabela } from './styles';
 
 export default function TableList({ title, data, type } ) {
- /**
-  *  const location = useLocation() 
-
+ 
+  const location = useLocation() 
+/**
   let match = useRouteMatch({
-    path: location.pathname,
+    path: location.pathname, + history.push(`edite/${location.pathname}`)
     exact: true
   });
 
   const active = false  ||  match ? "active" : ""
-  
-  function handleEdicao(){
-    // Verificar a rota para saber a rota que sera direcionada
+   */
+  const history = useHistory()
 
+  const handleEdicao = ()=> {
+    history.push(`editar${location.pathname}`)
   }
-  */
+
+  const handleDelete = () => {
+    // Deleta linha e da refresh na pagina
+  }
+ 
   return (
    <Container>
      <Tabela>
@@ -30,11 +35,17 @@ export default function TableList({ title, data, type } ) {
                 { body.map(content => <td> {content} </td>) } 
                 { type === "1" 
                 ?
-                  <td> <button className="editar"> responder </button> </td>
+                  <td>
+                    <button onClick={handleEdicao} className="editar"> responder </button> 
+                  </td>
                 :
                 <>
-                  <td> <button className="editar"> editar </button> </td>
-                  <td> <button className="apagar"> apagar </button> </td> 
+                  <td> 
+                    <button onClick={handleEdicao} className="editar"> editar </button> 
+                  </td>
+                  <td> 
+                    <button onClick={handleDelete} className="apagar"> apagar </button> 
+                  </td> 
                 </>
                 }    
               </tr> ))} 

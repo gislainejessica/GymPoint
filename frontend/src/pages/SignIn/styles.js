@@ -14,11 +14,12 @@ export const Container = styled.div`
 `;
 
 export const Banner = styled.div`
+  margin-bottom: 10px;
+
   img {
     height: 100px;
     width: 153px;
   }
-  margin-bottom: 10px;
 `;
 
 export const Formulario = styled(Form)`
@@ -29,8 +30,8 @@ export const Formulario = styled(Form)`
   margin-top: 30px;
 
   label {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 
     font-weight: bold;
     font-size: 14px;
@@ -41,6 +42,7 @@ export const Formulario = styled(Form)`
     height: 45px;
     border-radius: 6px;
     padding-left: 15px;
+    border: 1px solid #ddd;
 
     ::placeholder {
       color: #999 ;
@@ -54,8 +56,6 @@ export const Formulario = styled(Form)`
     color: #fff;
     font-size: 16px;
     border-radius: 6px;
-    border: 2 solid #F45; 
     background: #EE4D64;
-
   }
 `;

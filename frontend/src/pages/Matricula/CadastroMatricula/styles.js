@@ -17,17 +17,3 @@ export const Container = styled.div`
   }
 `;
 
-export const InfoCadastro = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  padding-top: 30px;
-  padding-left: 120px;
-  padding-right: 120px;
-
-  div {
-    display: flex;
-    flex-direction: row;
-  }
-`

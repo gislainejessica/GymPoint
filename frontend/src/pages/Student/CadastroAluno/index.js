@@ -1,55 +1,14 @@
 import React from 'react';
-import Input from '../../../components/InputBox';
-import Button from '../../../components/Button';
-import { useRouteMatch, useLocation, useHistory } from 'react-router-dom';
 
-import { Container , InfoCadastro} from './styles';
+import Input from '../../../components/InputBox';
+import CadastroInfo from '../../../components/CadastroInfo';
+
+import { Container} from './styles';
 
 export default function CadastroAluno() {
-  const history = useHistory()
-  const location = useLocation()  
-
-  let match = useRouteMatch({
-    path: location.pathname,
-    exact: true
-  });
-
-  const  back = () => {
-    if (match.path === "/cadastro/alunos"){
-        history.push("/alunos")
-    }
-    if (match.path === "/cadastro/matriculas"){
-      history.push("/matriculas")
-    }
-    if (match.path === "/cadastro/planos"){
-      history.push("/planos")
-    }
-  }
-
-  const  salvar = () => {
-    // Salvar dados no server
-    if (match.path === "/cadastro/alunos"){
-        history.push("/alunos")
-    }
-    if (match.path === "/cadastro/matriculas"){
-      history.push("/matriculas")
-    }
-    if (match.path === "/cadastro/planos"){
-      history.push("/planos")
-    }
-  }
-
   return (
     <>
-    <InfoCadastro>
-      <h2> Cadastro de Aluno </h2>
-      <div className="Botaos">
-        <Button label={"Voltar"} action={back} type=""> </Button>
-        <Button label={"Salvar"} action={salvar} type="primary"> </Button>
-      </div>
-
-    </InfoCadastro>
-   
+    <CadastroInfo title="Cadastro Aluno" />
 
     <Container>
       <Input label={"NOME COMPLETO"} input={"Insira seu nome"}/>

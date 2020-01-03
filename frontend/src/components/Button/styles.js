@@ -2,6 +2,10 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background: ${props => (props.type === 'primary' ? '#ee4d64' : '#ccc')};
     color: #fff;
     font-family: Roboto-Bold sans-serif;
@@ -9,12 +13,11 @@ export const StyledButton = styled.button`
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 6px 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
     transition: opacity 0.1s;
 
     height: 36px;

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-bottom: 30px;
-  padding-right: 30px;
-  
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
   align-items: flex-start;
+
+  padding-bottom: 30px;
+  padding-right: 30px;
 `;
 
 export const Entrada = styled.input`

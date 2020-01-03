@@ -21,6 +21,10 @@ import CadastroA from '../pages/Student/CadastroAluno'
 import CadastroM from '../pages/Matricula/CadastroMatricula'
 import CadastroP from '../pages/Plan/CadastroPlano'
 
+import EditarA from '../pages/Student/EdicaoAluno'
+import EditarM from '../pages/Matricula/EdicaoMatricula'
+import EditarP from '../pages/Plan/EdicaoPlano'
+
 //import Edicao from '../pages/Student/EdicaoAluno'
 
 
@@ -38,6 +42,12 @@ export default function Routes() {
       <Route path="/cadastro/planos" component={CadastroP} isPrivate/>
       <Route path="/cadastro/matriculas" component={CadastroM} isPrivate/>
       <Route path="/cadastro/pedidos" component={CadastroM} isPrivate/>
+
+
+      <Route path="/editar/alunos" component={EditarA} isPrivate/>
+      <Route path="/editar/planos" component={EditarP} isPrivate/>
+      <Route path="/editar/matriculas" component={EditarM} isPrivate/>
+      <Route path="/editar/pedidos" component={EditarM} isPrivate/>
     </Switch>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
+import { MdAdd } from 'react-icons/md'
 
 import Button from '../Button';
 import { Container, Side } from './styles';
@@ -30,7 +31,7 @@ export default function PageInfo({ title , button , input}) {
       <h2> {title} </h2>
       { button && 
         <Side>
-          <Button label={"CADASTRAR"}  action={handleClick} type={"primary"}/>
+          <Button Icon={MdAdd} label={"CADASTRAR"}  action={handleClick} type={"primary"}/>
           {input &&  <input type="text" placeholder={input}/>}
         </Side>
       }
