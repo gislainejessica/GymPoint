@@ -6,7 +6,7 @@ export default reducers => {
     {
       key: 'gypoint',
       storage: AsyncStorage,
-      whitelist: ['auth', 'user']
+      whitelist: ['auth']
     },
     reducers
   )
