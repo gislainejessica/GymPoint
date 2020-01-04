@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo }  from 'react';
 import Tabela from '../../components/TableList';
 import Info from '../../components/PageInfo';
-import api from '../../services/api'
+import api from '../../services/api';
 
 import { Container } from './styles';
 

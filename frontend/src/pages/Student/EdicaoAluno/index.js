@@ -2,20 +2,14 @@ import React from 'react';
 import Input from '../../../components/InputBox';
 import Button from '../../../components/Button';
 
-import { Container , InfoCadastro} from './styles';
+import { Container } from './styles';
+import Info from '../../../components/CadastroInfo';
 
 export default function EdicaoAluno() {
 
   return (
     <>
-    <InfoCadastro>
-      <h2> Edicão de Aluno </h2>
-      <div className="Botaos">
-        <Button label={"Voltar"}> </Button>
-        <Button label={"Salvar"}> </Button>
-      </div>
-    </InfoCadastro> 
-
+    <Info title="Edição de Aluno" />
     <Container>
       <Input label={"NOME COMPLETO"} input={"Insira seu nome"}/>
       <Input label={"ENDEREÇO DE EMAIL"} input={"Insira seu email"} />

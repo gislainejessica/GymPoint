@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import Info from '../../components/PageInfo';
 import Tabela from '../../components/TableList';
 
-import api from '../../services/api'
+import api from '../../services/api';
 
 // import { Container, Side, Box} from './styles';
 

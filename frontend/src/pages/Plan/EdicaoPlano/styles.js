@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Button from '../../../components/Button';
 
 export const Container = styled.div`
   display: flex;
@@ -17,16 +16,3 @@ export const Container = styled.div`
     flex-direction: row;
   }
 `;
-
-export const InfoCadastro = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-
-  flex-direction: row;
-  justify-content: space-between;
-
-  padding-top: 30px;
-  padding-left: 120px;
-  padding-right: 120px;
-
-`

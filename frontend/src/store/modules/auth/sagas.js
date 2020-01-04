@@ -1,9 +1,9 @@
-import { all, takeLatest, put, call } from 'redux-saga/effects'
-import api from '../../../services/api'
-import { toast } from 'react-toastify'
-import { signSuccess , signFailure} from './actions'
+import { all, takeLatest, put, call } from 'redux-saga/effects';
+import api from '../../../services/api';
+import { toast } from 'react-toastify';
+import { signSuccess , signFailure} from './actions';
 
-import history from '../../../services/history'
+import history from '../../../services/history';
 
 export function* signIn({ payload }) {
   try {
@@ -12,7 +12,6 @@ export function* signIn({ payload }) {
     const response = yield call(api.post, 'sessions', { email, password })
   
     const { token, user } = response.data
-    console.tron.log(response.data)
 
     api.defaults.headers.Authorization = `Bearer ${token}`
   

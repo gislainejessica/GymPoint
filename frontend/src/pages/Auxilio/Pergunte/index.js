@@ -1,13 +1,18 @@
 import React from 'react';
-import Input from '../../../components/InputBox';
 import Button from '../../../components/Button';
 
-import { Container , InfoCadastro} from './styles';
-
-export default function CadastroPlanp() {
+export default function Pergunte() {
 
   return (
     <>
+      <h2> Pergunta do Aluno </h2>
+      <div>
+        <h3> Aqui a pergunta em si </h3>
+      </div>
+      <h2> Sua resposta </h2>
+      <input type="text"/>
+      <Button label="Responder Aluno" type="primary"/>
+
     </>
   );
 }

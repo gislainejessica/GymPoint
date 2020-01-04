@@ -1,8 +1,9 @@
 import React ,{ useEffect, useState, useMemo}from 'react';
 import Tabela from '../../components/TableList';
-import api from '../../services/api'
+import api from '../../services/api';
 
 import Info from '../../components/PageInfo';
+
 // import { Container } from './styles';
 
 export default function Matricula() {

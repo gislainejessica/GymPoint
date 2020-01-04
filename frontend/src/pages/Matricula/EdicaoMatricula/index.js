@@ -1,21 +1,13 @@
 import React from 'react';
 import Input from '../../../components/InputBox';
-import Button from '../../../components/Button';
-
-import { Container , InfoCadastro} from './styles';
+import Info from '../../../components/CadastroInfo';
+import { Container } from './styles';
 
 export default function EdicaoMatricula() {
 
   return (
     <>
-    <InfoCadastro>
-      <h2> Edição de Matrícula </h2>
-      <div className="Botaos">
-        <Button label={"Voltar"}> </Button>
-        <Button label={"Salvar"}> </Button>
-      </div>
-    </InfoCadastro>
-   
+    <Info title=" Edição de Matrícula" />
     <Container>
       <Input label={"ALUNO"}/>
       <div className="blockend">

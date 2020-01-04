@@ -1,12 +1,12 @@
 import React from 'react';
-
-import { Container, Label, Entrada } from './styles';
+import Input from '../Input';
+import { Container, Label } from './styles';
 
 export default function InputBox({ label, input}) {
   return (
     <Container>
       <Label> {label} </Label>
-      <Entrada type="text" placeholder={input}/>
+      <Input type="text" placeholder={input}/>
     </Container>
   );
 }

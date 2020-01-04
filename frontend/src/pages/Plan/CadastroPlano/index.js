@@ -6,8 +6,6 @@ import Input from '../../../components/InputBox';
 import { Container} from './styles';
 
 export default function CadastroPlano() {
-
-
   return (
     <>
     <CadastroInfo title="Cadastro Plano" />

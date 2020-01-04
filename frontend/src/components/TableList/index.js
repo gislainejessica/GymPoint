@@ -5,14 +5,6 @@ import { Container, Tabela } from './styles';
 export default function TableList({ title, data, type } ) {
  
   const location = useLocation() 
-/**
-  let match = useRouteMatch({
-    path: location.pathname, + history.push(`edite/${location.pathname}`)
-    exact: true
-  });
-
-  const active = false  ||  match ? "active" : ""
-   */
   const history = useHistory()
 
   const handleEdicao = ()=> {
@@ -21,6 +13,10 @@ export default function TableList({ title, data, type } ) {
 
   const handleDelete = () => {
     // Deleta linha e da refresh na pagina
+  }
+  
+  const handleResposta = () => {
+    history.push(`pergunte`)
   }
  
   return (
@@ -36,7 +32,7 @@ export default function TableList({ title, data, type } ) {
                 { type === "1" 
                 ?
                   <td>
-                    <button onClick={handleEdicao} className="editar"> responder </button> 
+                    <button onClick={handleResposta} className="editar"> responder </button> 
                   </td>
                 :
                 <>

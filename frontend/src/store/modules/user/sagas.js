@@ -1,9 +1,9 @@
-import { toast } from 'react-toastify'
-import { all, takeLatest, put, call } from 'redux-saga/effects'
+import { toast } from 'react-toastify';
+import { all, takeLatest, put, call } from 'redux-saga/effects';
 
-import api from '../../../services/api'
+import api from '../../../services/api';
 
-import { updateProfileSuccess, updateProfileFailure } from './actions'
+import { updateProfileSuccess, updateProfileFailure } from './actions';
 
 export function* updateProfile({ payload }) {
   try {

@@ -3,10 +3,8 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 
-export default function App() {
+export default function Chekin() {
   return (
-   <View>
-     <Text>Ola mundo </Text>
-   </View>
-  )
+    <Text> Checkin </Text>
+ );
 }

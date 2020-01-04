@@ -10,14 +10,6 @@ export const Container = styled.div`
   padding-right: 30px;
 `;
 
-export const Entrada = styled.input`
-  width: 232px;
-  height: 36px;
-  padding-left: 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-`
-
 export const Label = styled.h2`
   font-size: 14px;
   font-weight: bold;
