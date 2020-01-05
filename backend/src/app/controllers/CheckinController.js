@@ -4,8 +4,21 @@ import Checkin from '../models/Checkin'
 import Student from '../models/Student'
 
 class CheckinController {
+
+	async index(req, res) {
+
+		const checkins = await Checkin.findAll()
+
+		return res.json(checkins)
+	}
+
 	async show(req, res) {
 		const { student_id } = req.params
+		const checkStudent = await Student.findOne({ where: { id: student_id }})
+
+		if (!checkStudent){
+			return res.json({ message: "O ID do estudante não tem check-in no sitema" })
+		}
 
 		const checkins = await Checkin.findAndCountAll({ where: { student_id } })
 
@@ -15,12 +28,10 @@ class CheckinController {
 		const { student_id } = req.params
 
 		try {
-			const checkStudent = await Student.findByPk(student_id)
 
-			if (!checkStudent) {
-				return res.status(404).json({ message: 'Estudante não encotrado' })
+			if (student_id !== await(Student.findByPk(student_id))){
+				return res.json({ message: "O ID do estudante não está habilitado para check-in" })
 			}
-
 			// Verifcar se numero de checkins foi ultrapassado
 			const numCheckin = await Checkin.findAndCountAll({
 				where: {
@@ -39,7 +50,7 @@ class CheckinController {
 			await Checkin.create({ student_id })
 		}
 		catch(erro){
-			return res.status(400).json({ error: "deu ruim" })
+			return res.status(400).json({ error: "Deu ruim" })
 		}
 
 		return res.json({ student_id })

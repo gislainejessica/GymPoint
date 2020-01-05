@@ -8,8 +8,6 @@ import CheckinController from './app/controllers/CheckinController'
 import HelperOrdersController from './app/controllers/HelperOrdersController'
 import HelperAnswerController from './app/controllers/HelperAnswerController'
 
-
-
 import auth from './app/middlewares/auth'
 import admim from './app/middlewares/admin'
 
@@ -51,6 +49,8 @@ routes.delete('/matriculas/:id', auth, admim, MatriculaController.delete)
 
 routes.get('/students/:student_id/checkins', CheckinController.show)
 routes.post('/students/:student_id/checkins', CheckinController.store)
+routes.get('/students/checkins', CheckinController.index)
+
 
 /** helper-orders */
 
