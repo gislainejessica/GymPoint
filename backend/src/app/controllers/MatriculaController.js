@@ -61,7 +61,33 @@ class MatriculaController {
 		return res.json(newMatricula)
 	}
 	async update(req, res) {
-		return res.json({oi: "update"})
+		const { start_date, active, plan_id } = req.body
+
+		// Validação das entradas
+		const schema = await Yup.object().shape({
+			start_date: Yup.date().required(),
+			active: Yup.boolean().required(),
+			plan_id: Yup.number().required()
+		})
+		// plandsid valido ...
+
+		if (!(await schema.isValid(req.body))) {
+			return res.status(401).json({ message: 'Entrada inválida' })
+		}
+
+		const { duration, price: price_plan } = await Planos.findByPk(plan_id)
+		const hourStart = parseISO(start_date)
+
+		const newMatricula = {
+			start_date,
+			end_date: addMonths(hourStart, duration),
+			price: duration * price_plan,
+			active
+		}
+
+		await Matricula.create(newMatricula)
+
+		return res.json(newMatricula)
 	}
 	async delete(req, res) {
 		const { id } = req.params
