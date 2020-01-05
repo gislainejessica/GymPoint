@@ -6,12 +6,12 @@ export const Container = styled.View`
 
 export const Checkins = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
-  contentContainerStyle: { padding: 0 }
 })`
   margin-top: 10px;
   margin-bottom: 25px;
 
 `;
+
 export const InfoCheck = styled.View`
   flex:1;
   flex-direction:row;
@@ -22,6 +22,4 @@ export const InfoCheck = styled.View`
   border-radius: 4px;
   margin: 5px 0;
   background-color: #fff;
-
-
-`
+`;

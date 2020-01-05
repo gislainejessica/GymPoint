@@ -28,7 +28,7 @@ export default (signedIn = false) =>
                     tabBarLabel: 'Check-ins',
                   },
                   defaultNavigationOptions: {
-                    headerTitle : <Image source = {logo}/>,
+                    headerTitle : () => <Image source = {logo}/>,
                     headerTitleAlign: "center"
                   }
 
@@ -43,7 +43,7 @@ export default (signedIn = false) =>
                     tabBarLabel: 'Pedidos de Ajuda',
                   },
                   defaultNavigationOptions: {
-                    headerTitle : <Image source = {logo}/>,
+                    headerTitle :() => <Image source = {logo}/>,
                     headerTitleAlign: "center",
                   }
                 }
