@@ -60,11 +60,9 @@ class MatriculaController {
 
 		return res.json(newMatricula)
 	}
-
 	async update(req, res) {
 		return res.json({oi: "update"})
 	}
-
 	async delete(req, res) {
 		const { id } = req.params
 		const matricula = await Matricula.destroy({ where: { id } })

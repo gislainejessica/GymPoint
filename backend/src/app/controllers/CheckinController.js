@@ -11,7 +11,6 @@ class CheckinController {
 
 		return res.json(checkins)
 	}
-
 	async show(req, res) {
 		const { student_id } = req.params
 		const checkStudent = await Student.findOne({ where: { id: student_id }})
