@@ -4,18 +4,12 @@ import jwt from 'jsonwebtoken'
 
 class SessionController {
 	async store(req, res) {
-		// Validação dos dados de entrada
-		const schema = Yup.object().shape({
-			email: Yup.string().required(),
-			password: Yup.string().required(),
-		})
 
-		if (!(await schema.isValid(req.body))) {
-			return res.status(400).json({ erro: 'Entrada inválida' })
-		}
 		const { email, password } = req.body
 
-		const user = await User.findOne({ where: { email } })
+		const user = await User.findOne({
+			where: { email }
+		})
 
 		if (!user) {
 			return res.status(400).json({ erro: 'Usuário não existe' })

@@ -11,6 +11,13 @@ import HelperAnswerController from './app/controllers/HelperAnswerController'
 import auth from './app/middlewares/auth'
 import admim from './app/middlewares/admin'
 
+// Validando as entradas para determindas rotas
+
+//import validateUserStore from './app/validators/UserStore'
+//import validateUserUpdate from './app/validators/UserUpdate'
+import validateSessionStore from './app/validators/SessionStore'
+//import validateAgendamentoStore from './app/validators/AgendamentoStore'
+
 const routes = Router()
 
 /** Usuarios */
@@ -22,7 +29,7 @@ routes.delete('/users', auth, UserController.delete)
 
 /** Login */
 
-routes.post('/sessions', SessionController.store)
+routes.post('/sessions', validateSessionStore, SessionController.store)
 
 /** Estudantes */
 
